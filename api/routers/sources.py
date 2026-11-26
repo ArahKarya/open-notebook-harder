@@ -47,6 +47,7 @@ from open_notebook.domain.notebook import (
     Source,
 )
 from open_notebook.domain.transformation import Transformation
+from open_notebook.utils.zip_archive import is_zip_upload, zip_to_markdown
 from open_notebook.exceptions import (
     InvalidInputError,
     NotFoundError,
@@ -384,7 +385,11 @@ async def save_uploaded_file(upload_file: UploadFile) -> str:
         raise ValueError("No filename provided")
 
     content = await upload_file.read()
-    return await asyncio.to_thread(_write_uploaded_file, upload_file.filename, content)
+    filename = upload_file.filename
+    if is_zip_upload(filename, content):
+        # content-core cannot read archives: flatten to one Markdown document
+        content, filename = await asyncio.to_thread(zip_to_markdown, filename, content)
+    return await asyncio.to_thread(_write_uploaded_file, filename, content)
 
 
 def parse_source_form_data(
