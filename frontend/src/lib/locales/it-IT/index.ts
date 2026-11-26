@@ -456,6 +456,7 @@ export const itIT = {
     sendPlaceholder: "Chiedi qualsiasi cosa sulle tue fonti...",
     send: "Invia messaggio",
     noChatModel: "Nessun modello di chat selezionato. Configurane uno nella pagina modelli per chattare.",
+    webSearch: "Cerca sul web",
     sessionsTitle: "Sessioni chat",
     chatWith: "Chatta con {{name}}",
     startConversationSource: "Inizia una conversazione su questa fonte",

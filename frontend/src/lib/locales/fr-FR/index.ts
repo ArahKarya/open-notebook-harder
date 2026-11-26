@@ -456,6 +456,7 @@ export const frFR = {
     sendPlaceholder: "Posez n'importe quelle question sur vos sources...",
     send: "Envoyer le message",
     noChatModel: "Aucun modèle de chat n'est sélectionné. Configurez-en un dans la page Modèles pour discuter.",
+    webSearch: "Rechercher sur le web",
     sessionsTitle: "Sessions de Chat",
     chatWith: "Discuter avec {{name}}",
     startConversationSource: "Commencer une conversation sur cette source",

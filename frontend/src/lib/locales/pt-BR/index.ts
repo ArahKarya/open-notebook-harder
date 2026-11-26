@@ -456,6 +456,7 @@ export const ptBR = {
     sendPlaceholder: "Pergunte qualquer coisa sobre suas fontes...",
     send: "Enviar mensagem",
     noChatModel: "Nenhum modelo de chat selecionado. Configure um na página de Modelos para conversar.",
+    webSearch: "Pesquisar na web",
     sessionsTitle: "Sessões de Chat",
     chatWith: "Conversar com {{name}}",
     startConversationSource: "Inicie uma conversa sobre esta fonte",

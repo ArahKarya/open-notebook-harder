@@ -456,6 +456,7 @@ export const bnIN = {
     sendPlaceholder: "আপনার উৎসগুলি সম্পর্কে যেকোন কিছু জিজ্ঞাসা করুন...",
     send: "বার্তা পাঠান",
     noChatModel: "কোনো চ্যাট মডেল নির্বাচিত নেই। চ্যাট করতে Models পেজে একটি সেট করুন।",
+    webSearch: "ওয়েবে খুঁজুন",
     sessionsTitle: "চ্যাট সেশনগুলি",
     chatWith: "{{name}} এর সাথে চ্যাট করুন",
     startConversationSource: "এই উৎস সম্পর্কে কথোপকথন শুরু করুন",
