@@ -459,6 +459,7 @@ export const deDE = {
     sendPlaceholder: "Frage etwas zu deinen Quellen...",
     send: "Nachricht senden",
     noChatModel: "Kein Chat-Modell ausgewählt. Richte eines auf der Modellseite ein, um zu chatten.",
+    webSearch: "Im Web suchen",
     sessionsTitle: "Chat-Sitzungen",
     chatWith: "Chat mit {{name}}",
     startConversationSource: "Starte eine Unterhaltung zu dieser Quelle",

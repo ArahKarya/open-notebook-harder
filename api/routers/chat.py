@@ -81,6 +81,10 @@ class ExecuteChatRequest(BaseModel):
     model_override: Optional[str] = Field(
         None, description="Optional model override for this message"
     )
+    web_search: bool = Field(
+        False,
+        description="Let the model search the public web for this message",
+    )
 
 
 class ExecuteChatResponse(BaseModel):
@@ -349,6 +353,7 @@ async def execute_chat(request: ExecuteChatRequest):
         state_values["context"] = request.context
         state_values["notebook"] = notebook
         state_values["model_override"] = model_override
+        state_values["web_search"] = request.web_search
 
         # Add user message to state
         from langchain_core.messages import HumanMessage

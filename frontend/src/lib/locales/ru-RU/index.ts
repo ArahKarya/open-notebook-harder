@@ -456,6 +456,7 @@ export const ruRU = {
     sendPlaceholder: "Задайте вопрос о ваших источниках...",
     send: "Отправить сообщение",
     noChatModel: "Модель чата не выбрана. Настройте её на странице «Модели», чтобы начать чат.",
+    webSearch: "Искать в интернете",
     sessionsTitle: "Сессии чата",
     chatWith: "Чат с {{name}}",
     startConversationSource: "Начните разговор об этом источнике",

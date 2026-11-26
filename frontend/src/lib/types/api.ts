@@ -251,6 +251,7 @@ export interface SendNotebookChatMessageRequest {
     notes: Array<Record<string, unknown>>
   }
   model_override?: string
+  web_search?: boolean
 }
 
 export interface BuildContextRequest {

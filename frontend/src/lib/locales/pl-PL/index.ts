@@ -456,6 +456,7 @@ export const plPL = {
     sendPlaceholder: "Zapytaj o cokolwiek dotyczące swoich źródeł...",
     send: "Wyślij wiadomość",
     noChatModel: "Nie wybrano modelu czatu. Skonfiguruj go na stronie Modele, aby rozmawiać.",
+    webSearch: "Szukaj w sieci",
     sessionsTitle: "Sesje czatu",
     chatWith: "Czat z {{name}}",
     startConversationSource: "Rozpocznij rozmowę o tym źródle",

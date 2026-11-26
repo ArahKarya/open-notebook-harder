@@ -456,6 +456,7 @@ export const zhCN = {
     sendPlaceholder: "向您的来源提问...",
     send: "发送消息",
     noChatModel: "尚未选择聊天模型。请在模型页面设置一个后再开始聊天。",
+    webSearch: "联网搜索",
     sessionsTitle: "聊天会话",
     chatWith: "与{{name}}对话",
     startConversationSource: "开始针对此来源进行对话",

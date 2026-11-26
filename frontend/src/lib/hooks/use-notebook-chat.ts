@@ -28,6 +28,7 @@ export function useNotebookChat({ notebookId, sources, notes, contextSelections 
   const queryClient = useQueryClient()
   const [currentSessionId, setCurrentSessionId] = useState<string | null>(null)
   const [messages, setMessages] = useState<NotebookChatMessage[]>([])
+  const [webSearch, setWebSearch] = useState(false)
   const [isSending, setIsSending] = useState(false)
   // Same as isSending, but readable from the session effect without re-running it
   const sendingRef = useRef(false)
@@ -234,7 +235,8 @@ export function useNotebookChat({ notebookId, sources, notes, contextSelections 
         session_id: sessionId,
         message,
         context,
-        model_override: modelOverride ?? (currentSession?.model_override ?? undefined)
+        model_override: modelOverride ?? (currentSession?.model_override ?? undefined),
+        web_search: webSearch || undefined
       })
 
       // Update messages with API response
@@ -260,6 +262,7 @@ export function useNotebookChat({ notebookId, sources, notes, contextSelections 
     currentSessionId,
     currentSession,
     pendingModelOverride,
+    webSearch,
     buildContext,
     refetchCurrentSession,
     queryClient,
@@ -336,6 +339,8 @@ export function useNotebookChat({ notebookId, sources, notes, contextSelections 
     deleteSession,
     switchSession,
     sendMessage,
+    webSearch,
+    setWebSearch,
     setModelOverride,
     refetchSessions
   }

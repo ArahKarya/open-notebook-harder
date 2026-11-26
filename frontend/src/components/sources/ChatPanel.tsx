@@ -7,7 +7,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
-import { Bot, User, Send, Loader2, FileText, Lightbulb, StickyNote, Clock } from 'lucide-react'
+import { Globe, Bot, User, Send, Loader2, FileText, Lightbulb, StickyNote, Clock } from 'lucide-react'
 import { MarkdownRenderer } from '@/components/ui/markdown-renderer'
 import {
   SourceChatMessage,
@@ -40,6 +40,9 @@ interface ChatPanelProps {
   onSendMessage: (message: string, modelOverride?: string) => Promise<boolean>
   modelOverride?: string
   onModelChange?: (model?: string) => void
+  // Optional web search toggle (notebook chat only)
+  webSearch?: boolean
+  onWebSearchChange?: (enabled: boolean) => void
   // Session management props
   sessions?: BaseChatSession[]
   currentSessionId?: string | null
@@ -64,6 +67,8 @@ export function ChatPanel({
   onSendMessage,
   modelOverride,
   onModelChange,
+  webSearch,
+  onWebSearchChange,
   sessions = [],
   currentSessionId,
   onCreateSession,
@@ -224,6 +229,8 @@ export function ChatPanel({
           isStreaming={isStreaming}
           modelOverride={modelOverride}
           onModelChange={onModelChange}
+          webSearch={webSearch}
+          onWebSearchChange={onWebSearchChange}
         />
       </CardContent>
     </Card>
@@ -239,13 +246,17 @@ interface ChatComposerProps {
   isStreaming: boolean
   modelOverride?: string
   onModelChange?: (model?: string) => void
+  webSearch?: boolean
+  onWebSearchChange?: (enabled: boolean) => void
 }
 
 function ChatComposer({
   onSendMessage,
   isStreaming,
   modelOverride,
-  onModelChange
+  onModelChange,
+  webSearch,
+  onWebSearchChange
 }: ChatComposerProps) {
   const { t } = useTranslation()
   const chatInputId = useId()
@@ -295,6 +306,28 @@ function ChatComposer({
             onModelChange={onModelChange}
             disabled={isStreaming}
           />
+        </div>
+      )}
+
+      {onWebSearchChange && (
+        <div className="flex items-center justify-between">
+          <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+            <Globe className="h-3.5 w-3.5" aria-hidden="true" />
+            {t('chat.webSearch')}
+          </span>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={!!webSearch}
+            aria-label={t('chat.webSearch')}
+            disabled={isStreaming}
+            onClick={() => onWebSearchChange(!webSearch)}
+            className={`relative inline-flex h-5 w-9 flex-shrink-0 items-center rounded-full transition-colors disabled:opacity-50 ${webSearch ? 'bg-primary' : 'bg-muted-foreground/30'}`}
+          >
+            <span
+              className={`inline-block h-4 w-4 rounded-full bg-background shadow transition-transform ${webSearch ? 'translate-x-4' : 'translate-x-0.5'}`}
+            />
+          </button>
         </div>
       )}
 

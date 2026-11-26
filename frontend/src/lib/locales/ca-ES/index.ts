@@ -456,6 +456,7 @@ export const caES = {
     sendPlaceholder: "Pregunta qualsevol cosa sobre les teves fonts...",
     send: "Envia el missatge",
     noChatModel: "No hi ha cap model de xat seleccionat. Configura'n un a la pàgina Models per xatejar.",
+    webSearch: "Cerca al web",
     sessionsTitle: "Sessions de xat",
     chatWith: "Xat amb {{name}}",
     startConversationSource: "Inicia una conversa sobre aquesta font",

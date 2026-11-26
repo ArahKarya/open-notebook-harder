@@ -456,6 +456,7 @@ export const esES = {
     sendPlaceholder: "Pregunta cualquier cosa sobre tus fuentes...",
     send: "Enviar mensaje",
     noChatModel: "No hay ningún modelo de chat seleccionado. Configura uno en la página de Modelos para chatear.",
+    webSearch: "Buscar en la web",
     sessionsTitle: "Sesiones de chat",
     chatWith: "Chat con {{name}}",
     startConversationSource: "Inicia una conversación sobre esta fuente",

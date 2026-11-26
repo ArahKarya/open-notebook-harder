@@ -101,6 +101,8 @@ export function ChatColumn({ notebookId, contextSelections, sources, sourcesLoad
       onSendMessage={(message, modelOverride) => chat.sendMessage(message, modelOverride)}
       modelOverride={chat.currentSession?.model_override ?? chat.pendingModelOverride ?? undefined}
       onModelChange={(model) => chat.setModelOverride(model ?? null)}
+      webSearch={chat.webSearch}
+      onWebSearchChange={chat.setWebSearch}
       sessions={chat.sessions}
       currentSessionId={chat.currentSessionId}
       onCreateSession={(title) => chat.createSession(title)}

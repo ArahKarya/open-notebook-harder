@@ -83,6 +83,13 @@ def extract_chat_messages(raw_messages: Iterable[Any]) -> List[ChatMessage]:
     """Convert LangGraph/LangChain state messages into `ChatMessage` models."""
     messages: List[ChatMessage] = []
     for msg in raw_messages:
+        # Tool plumbing (web search) is not part of the visible conversation:
+        # hide tool results and AI messages that only carry tool calls.
+        if getattr(msg, "type", None) == "tool":
+            continue
+        if getattr(msg, "type", None) == "ai" and getattr(msg, "tool_calls", None):
+            if not str(getattr(msg, "content", "") or "").strip():
+                continue
         messages.append(
             ChatMessage(
                 id=getattr(msg, "id", f"msg_{len(messages)}"),

@@ -456,6 +456,7 @@ export const jaJP = {
     sendPlaceholder: "ソースについて何でも質問してください...",
     send: "メッセージを送信",
     noChatModel: "チャットモデルが選択されていません。チャットするにはモデルページで設定してください。",
+    webSearch: "Web検索",
     sessionsTitle: "チャットセッション",
     chatWith: "{{name}}とチャット",
     startConversationSource: "このソースについて会話を始めましょう",

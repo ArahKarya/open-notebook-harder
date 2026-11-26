@@ -454,6 +454,7 @@ export const enUS = {
     sendPlaceholder: "Ask anything about your sources...",
     send: "Send message",
     noChatModel: "No chat model is selected. Set one up in the Models page to start chatting.",
+    webSearch: "Search the web",
     sessionsTitle: "Chat Sessions",
     chatWith: "Chat with {{name}}",
     startConversationSource: "Start a conversation about this source",
